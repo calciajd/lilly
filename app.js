@@ -5,7 +5,7 @@ var app = angular.module('lillyApp', ['ngRoute', 'ngResource']);
 //create resources for API endpoints
 app.factory('Products', function ($resource) {
     "use strict";
-    return $resource('https://stg.lillypulitzer.com/s/lillypulitzer-us/dw/shop/v18_3/product_search?expand=availability,images,prices,variations&count=18&refine_1=cgid=just-in&q=&start=0&client_id=7469c353-e112-4902-bf40-ead35df41219', {}, {
+    return $resource('/products', {}, {
         query: {
             method: 'GET',
             isArray: false
@@ -13,7 +13,7 @@ app.factory('Products', function ($resource) {
     });
 }).factory('Women', function ($resource) {
     "use strict";
-    return $resource('https://stg.lillypulitzer.com/s/lillypulitzer-us/dw/shop/v18_3/product_search?expand=availability,images,prices,variations&count=18&refine_1=cgid=for-women&q=&start=0&client_id=7469c353-e112-4902-bf40-ead35df41219', {}, {
+    return $resource('/women', {}, {
         query: {
             method: 'GET',
             isArray: false
@@ -21,7 +21,7 @@ app.factory('Products', function ($resource) {
     });
 }).factory('Men', function ($resource) {
     "use strict";
-    return $resource('https://stg.lillypulitzer.com/s/lillypulitzer-us/dw/shop/v18_3/product_search?expand=availability,images,prices,variations&count=18&refine_1=cgid=for-men&q=&start=0&client_id=7469c353-e112-4902-bf40-ead35df41219', {}, {
+    return $resource('/men', {}, {
         query: {
             method: 'GET',
             isArray: false
@@ -29,7 +29,7 @@ app.factory('Products', function ($resource) {
     });
 }).factory('Sizes', function ($resource) {
     "use strict";
-    return $resource('https://stg.lillypulitzer.com/s/lillypulitzer-us/dw/shop/v18_2/products/:id/variations?client_id=7469c353-e112-4902-bf40-ead35df41219', {id: "@id"}, {
+    return $resource('/sizes', {id: "@id"}, {
         query: {
             method: 'GET',
             isArray: false
@@ -57,9 +57,9 @@ app.controller('HomeController', ['$scope', 'Products', '$http', 'Sizes', functi
             $scope.productArray[i].sizeArray = [];
             console.log("array ", $scope.productArray[i], " ", i);
             var pid = resp.hits[i].product_id.split("-")[0];
-            Sizes.query({id:pid}, (response)=>{
+            /*Sizes.query({id:pid}, (response)=>{
                 
-            });
+            });*/
         }
     });
 }]);
