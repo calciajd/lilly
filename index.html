@@ -1,16 +1,20 @@
 <html ng-app="lillyApp">
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-resource.min.js"></script>
-		<script src="app.js"></script>
-	</head>
 
-	<body ng-controller="HomeController">
-	<H1>Lilly</H1>
-		<a href="#!/">New</a><! -- need ! because of change in 1.6 to default prefix -->
-		<a href="#!/women">For Women</a>
-		<a href="#!/men">For Men</a>
-		<div ng-view></div>
-	</body>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-resource.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="HomeController">
+    <H1>Lilly Pulitzer</H1>
+    <br>
+    <a href="#!/">New</a>&emsp;
+    <a href="#!/women">For Women</a>&emsp;
+    <a href="#!/men">For Men</a>
+    <hr>
+    <div ng-view></div>
+</body>
+
 </html>
