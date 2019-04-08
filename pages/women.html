@@ -1,0 +1,17 @@
+<div ng-if="loading">&nbsp;Loading...</div>
+<div ng-if="!loading">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in productArray">
+                <td><a href={{product.image.link}}>{{product.product_name}}</a></td>
+                <td>{{product.price | currency}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
