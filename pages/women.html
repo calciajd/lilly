@@ -5,12 +5,14 @@
             <tr>
                 <th>Name</th>
                 <th>Price</th>
+               <!-- <th>Sizes</th>-->
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="product in productArray">
                 <td><a href={{product.image.link}}>{{product.product_name}}</a></td>
                 <td>{{product.price | currency}}</td>
+                <!--<td></td>-->
             </tr>
         </tbody>
     </table>
